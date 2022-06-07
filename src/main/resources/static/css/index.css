@@ -1,0 +1,19 @@
+html, body { height: 100vh; }
+.mh-10vh { min-height: 10vh; }
+.mh-20vh { min-height: 20vh; }
+.mh-30vh { min-height: 30vh; }
+.mh-40vh { min-height: 40vh; }
+.mh-50vh { min-height: 50vh; }
+
+.h10vh { height: 10vh; }
+.h20vh { height: 20vh; }
+.h30vh { height: 30vh; }
+.h40vh { height: 40vh; }
+.h50vh { height: 50vh; }
+
+.text-align-center { text-align: center; }
+.text-align-right { text-align: right; }
+
+.g30 { gap: 30px }
+.g50 { gap: 50px }
+.g100 { gap: 100px }
