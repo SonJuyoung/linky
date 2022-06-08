@@ -4,10 +4,10 @@
 
 <!--*** HEADER ***-->
 <th:block th:fragment="header">
-    <nav class="ps-3 navbar navbar-expand-sm bg-dark navbar-dark position-fixed top-0 min-vw-100 h10vh">
+    <nav class="h10vh ps-3 navbar navbar-expand-sm bg-dark navbar-dark position-fixed top-0 min-vw-100">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Logo</a>
-            <button type="button" class="btn btn-dark">신청하기</button>
+            <a th:href="@{/apply}"><button type="button" class="btn btn-dark">신청하기</button></a>
         </div>
     </nav>
 </th:block>

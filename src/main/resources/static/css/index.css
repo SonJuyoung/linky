@@ -15,14 +15,27 @@ html, body { height: 100vh; margin: 0}
 .h40vh { height: 40vh; }
 .h50vh { height: 50vh; }
 
+.w10vh { width: 10vh; }
+.w20vh { width: 20vh; }
+.w30vh { width: 30vh; }
 .w100 { width: 100%;}
 
 .text-align-center { text-align: center; }
 .text-align-right { text-align: right; }
 
-.g30 { gap: 30px }
-.g50 { gap: 50px }
-.g100 { gap: 100px }
+.g30 { gap: 30px; }
+.g50 { gap: 50px; }
+.g100 { gap: 100px; }
+
+
+.mv-auto { margin: auto 0px; }
+.mt10vh{ margin-top: 10vh; }
+.mt20vh{ margin-top: 20vh; }
+.mt30vh{ margin-top: 30vh; }
+
+.hidden {
+    visibility: hidden;
+}
 
 .z-index0 { z-index: 0;}
 .z-index1 { z-index: 1;}
