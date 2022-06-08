@@ -22,6 +22,6 @@ public class ApplyController {
     @PostMapping
     public String applyProc(AnswerListVo listVo, HttpSession hs) {
         hs.setAttribute("test", listVo);
-        return "redirect:/apply";
+        return "redirect:/payment";
     }
 }
