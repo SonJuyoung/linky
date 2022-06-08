@@ -10,7 +10,14 @@ var slideOption = {
     }
 };
 
+let realIndex = 0;
+
 const slide = new Swiper('#test-slide', slideOption);
+
+slide.on('transitionEnd', function() {
+    console.log('now index :::', slide.realIndex);
+    realIndex = slide.realIndex;
+});
 
 /*
     ex) mySlider.autoplay.start()
