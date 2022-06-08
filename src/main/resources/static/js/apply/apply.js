@@ -5,7 +5,6 @@ if(applyContainerElem) {
     };
 
     const data = {
-        /** List<Answer> -> QuestionEntity **/
         answer : []
     };
 
@@ -82,12 +81,6 @@ if(applyContainerElem) {
                             data.answer.push({'answer' : val});
                             break;
                     }
-
-                    /* todo - fetch -> data insert */
-                    /**
-                     * data.answer type : list
-                     * ex ) {'answer' : 'ctnt1'}, {'answer' : 'ctnt2'} ...
-                     **/
 
                     const f = document.createElement('form');
 
