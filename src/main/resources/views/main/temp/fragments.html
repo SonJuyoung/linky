@@ -5,8 +5,8 @@
 <!--*** HEADER ***-->
 <th:block th:fragment="header">
     <nav class="h10vh ps-3 navbar navbar-expand-sm bg-light navbar-dark position-fixed top-0 min-vw-100">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img th:src="@{/img/logo.png}"></a>
+        <div class="container-fluid d-flex">
+            <a class="navbar-brand" href="#"><img class="h10vh" th:src="@{/img/logo.png}"></a>
             <a th:href="@{/apply}"><button type="button" class="btn btn-dark">신청하기</button></a>
         </div>
     </nav>
@@ -16,7 +16,7 @@
 
 <!--*** FOOTER ***-->
 <th:block th:fragment="footer">
-    <footer class="bg-info h10vh">
+    <footer class="h10vh">
         <div class="h-100 d-flex align-items-center justify-content-between">
             <div></div>
             <div>
