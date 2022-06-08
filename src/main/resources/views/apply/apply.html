@@ -13,12 +13,13 @@
 
     <script defer th:src="@{/js/apply/slide.js}"></script>
     <script defer th:src="@{/js/apply/apply.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/apply/apply.css}">
     <title>Title</title>
 </head>
 <body>
     <div class="apply-container">
         <!--    헤더    -->
-        <div class="bg-primary h40vh">
+        <div class="apply-header h40vh">
             <div class="d-flex align-items-center justify-content-center h-100">
                 <h4>더 안전하고 즐거운 시간을 위한 간단한 설문</h4>
             </div>
@@ -42,10 +43,10 @@
                     <div class="swiper-wrapper text-align-center">
                         <div class="swiper-slide mh-20vh">
                             <div>
-                                <h1>1. 신청일시</h1>
+                                <h4>1. 신청일시</h4>
                             </div>
                             <div class="question">
-                                <select name="aa" class="q-select-1">
+                                <select name="aa" id="q1" class="q-select-1 answer">
                                     <option value="0" class="s-false">----------</option>
                                     <option value="1">2022/07/07</option>
                                     <option value="2">2022/07/07</option>
@@ -57,34 +58,36 @@
 
                         <div class="swiper-slide mh-20vh">
                             <div class="d-flex justify-content-center">
-                                <h1>2. 연령대가 어떻게 되세요? </h1>
+                                <h4>2. 연령대가 어떻게 되세요? </h4>
                                 <span class="mv-auto"> (예시. 20초/중/후, 30초/중/후)</span>
                             </div>
                             <div class="question">
-                                <button>이전</button>
-                                <input type="text" class="q-input">
+                                <button class="prev-button">이전</button>
+                                <input type="text" id="q2" class="q-input answer">
                                 <button class="hidden next">다음</button>
                             </div>
                         </div>
 
                         <div class="swiper-slide mh-20vh">
                             <div class="d-flex justify-content-center">
-                                <h1>3. 본인의 성격 한마디로</h1>
+                                <h4>3. 본인의 성격 한마디로</h4>
                                 <span class="mv-auto">(MBTI 가능)</span>
                             </div>
                             <div class="question">
-                                <input type="text" class="q-input">
+                                <button class="prev-button">이전</button>
+                                <input type="text" id="q3" class="q-input answer">
                                 <button class="hidden next">다음</button>
                             </div>
                         </div>
 
                         <div class="swiper-slide mh-20vh">
                             <div class="d-flex justify-content-center">
-                                <h1>4. 본인을 알 수 있는 SNS주소나 아이디 </h1>
+                                <h4>4. 본인을 알 수 있는 SNS주소나 아이디 </h4>
                                 <span class="mv-auto">(참여자 검증에 사용되며, 없을 시 우선순위에서 밀릴 수 있어요)</span>
                             </div>
                             <div class="question">
-                                <input type="text" class="q-input">
+                                <button class="prev-button">이전</button>
+                                <input type="text" id="q4" class="q-input answer">
                                 <button class="hidden next">제출</button>
                             </div>
                         </div>
