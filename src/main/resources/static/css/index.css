@@ -35,8 +35,7 @@ html, body { height: 100vh; margin: 0}
 .mt30vh{ margin-top: 30vh; }
 
 .hidden {
-    /*visibility: hidden;*/
-    display: none;
+    visibility: hidden;
 }
 
 .z-index0 { z-index: 0;}
