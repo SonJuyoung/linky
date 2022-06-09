@@ -9,6 +9,7 @@ html, body { height: 100vh; margin: 0}
 .mxh-30vh { max-height: 30vh;}
 .mxh-40vh { max-height: 40vh;}
 
+.h8vh { height:8vh; }
 .h10vh { height: 10vh; }
 .h20vh { height: 20vh; }
 .h30vh { height: 30vh; }
@@ -40,3 +41,16 @@ html, body { height: 100vh; margin: 0}
 
 .z-index0 { z-index: 0;}
 .z-index1 { z-index: 1;}
+
+.kakao_c {
+    object-fit: contain;
+    max-height: 5vh;
+}
+
+.transferInfo {
+    display:none;
+}
+
+footer {
+    background-color: #ECFFF8;
+}
