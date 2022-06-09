@@ -23,10 +23,19 @@
                 <span>Copyright(c) Linky All rights reserved</span>
             </div>
             <div class="me-3">
-                <a href="#"><img class="kakao_c" th:src="@{/img/kakao_c.png}"></a>
+                <img onclick="kakaoChatStart()" class="kakao_c" th:src="@{/img/kakao_c.png}">
             </div>
         </div>
     </footer>
+    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type='text/javascript'>
+        Kakao.init('6fe10d751377af830d5f241d87f2dc6f'); // 사용할 앱의 JavaScript키를 입력해 주세요.
+        function kakaoChatStart() {
+            Kakao.Channel.chat({
+                channelPublicId: '_niqcb' // 카카오톡 채널 홈 URL에 명시된 ID를 입력합니다.
+            });
+        }
+    </script>
 </th:block>
 
 </html>
