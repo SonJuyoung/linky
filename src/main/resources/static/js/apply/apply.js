@@ -91,6 +91,7 @@ if(applyContainerElem) {
                         obj.setAttribute('name', `answerVoList[${cnt}].answer`);
                         obj.setAttribute('value', item.answer);
                         f.appendChild(obj);
+                        cnt++;
                     });
 
                     f.setAttribute('method', 'post');
