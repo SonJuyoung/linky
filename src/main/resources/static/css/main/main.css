@@ -5,3 +5,9 @@
     cursor: pointer;
     color: white;
 }
+
+.f-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

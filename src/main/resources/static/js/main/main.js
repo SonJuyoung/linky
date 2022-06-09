@@ -1,50 +1,45 @@
 const mainContainerElem = document.querySelector('.main-container');
-const scheduleModButton = mainContainerElem.querySelector('.schedule-mod-button');
-const scheduleDataArr = mainContainerElem.querySelectorAll('.schedule-data');
-const scheduleCancelButton = mainContainerElem.querySelector('.schedule-cancel-button');
+const scheduleContainerElem = mainContainerElem.querySelector('.schedule-wrapper');
+const scheduleModalBody = mainContainerElem.querySelector('.modal-body');
 
-const changeScheduleModButton = () => {
-    if(scheduleModButton.classList.contains('submit')) {
-        scheduleModButton.innerText = '수정하기';
-        scheduleModButton.classList.remove('submit');
-        scheduleCancelButton.classList.add('hidden');
-    } else {
-        scheduleModButton.innerText = '확인';
-        scheduleModButton.classList.add('submit');
-        scheduleCancelButton.classList.remove('hidden');
-    }
-}
+if(scheduleContainerElem) {
+    const scheduleModButton = mainContainerElem.querySelectorAll('.schedule-mod-button');
+    scheduleModButton.forEach(item => {
+        item.addEventListener('click', (e) => {
+            scheduleModalBody.innerHTML = '';
 
-const modSwitchFunction = (arr, status) => {
-    arr.forEach(item => {
-        switch (status) {
-            case 'on' :
-                item.classList.add('schedule-mod-select');
-                changeScheduleModButton();
-                break;
-            case 'off' :
-                item.classList.remove('schedule-mod-select');
-                changeScheduleModButton();
-                break;
-        }
+            const parent = e.target.closest('.schedule-data');
+            const date = parent.querySelector('.date').innerText;
+            const time = parent.querySelector('.time').innerText;
+
+            scheduleModalBody.innerHTML = `
+                <div class="d-flex">
+                    <div class="text-align-right mr10px w65px">날짜 </div>
+                    <input class="w150px modal-date" type="date" value="${date}">
+                    
+                    <div class="text-align-right mr10px w65px">시간 </div> 
+                    <input class="w150px modal-time" type="text" value="${time}">
+                </div>
+                <div class="d-flex">
+                    <div class="text-align-right mr10px w65px">남 </div>
+                    <input class="w150px modal-man" type="text" value="${date}">
+                    
+                    <div class="text-align-right mr10px w65px">여 </div> 
+                    <input class="w150px modal-woman" type="text" value="${time}">
+                </div>
+                <div class="d-flex">
+                    <div class="text-align-right mr10px w65px">모집여부 </div>
+                    <label class="mr30px">
+                        <input class="modal-status" name="modal-status" type="radio">모집중
+                    </label>
+                    
+                    <label>
+                        <input class="modal-status" name="modal-status" type="radio">마감
+                    </label>
+                </div>
+            `;
+
+            const div = document.createElement('div');
+        });
     });
 }
-
-/* schedule mod button ready */
-if(scheduleModButton) {
-    scheduleModButton.addEventListener('click', (e) => {
-        modSwitchFunction(scheduleDataArr, 'on', e.target);
-        changeScheduleModButton();
-
-        if(!scheduleModButton.classList.contains('submit')) {
-            /** fetch **/
-            location.reload();
-        }
-    });
-}
-
-/* schedule mod ready cancel */
-scheduleCancelButton.addEventListener('click', () => {
-    modSwitchFunction(scheduleDataArr, 'off');
-    changeScheduleModButton();
-});
