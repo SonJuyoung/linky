@@ -14,7 +14,7 @@
 <body>
     <th:block layout:fragment="content">
         <div class="mt10vh main-container">
-            <div class="g100 bg-primary d-flex flex-column p-3 h40vh">
+            <div class="g100 bg-primary d-flex flex-column p-3">
                 <div class="text-white">
                     <h1>Another</h1>
                     <h1>Experience</h1>
@@ -25,18 +25,21 @@
                     </div>
                     <div class="schedule-wrapper">
                         <th:block th:each="data : ${schedule}">
-<!--                            sec:authorize="isAuthenticated()" -->
-                            <h2 class="schedule-data">
-                                <button type="button"
+                            <h5 class="schedule-data">
+                                <button sec:authorize="isAuthenticated()"
+                                        type="button"
                                         class="btn btn-primary schedule-mod-button"
                                         data-bs-toggle="modal"
                                         data-bs-target="#myModal">수정</button>
                                 <span class="date" th:text="${data.rdt}"></span>
                                 <span class="day" th:text="${data.day}"></span>
                                 <span class="time" th:text="${data.time}"></span>
+                                <input type="hidden" class="id" th:value="${data.id}">
+                                <input type="hidden" class="man" th:value="${data.man}">
+                                <input type="hidden" class="woman" th:value="${data.woman}">
                                 <span class="person" th:text="|남${data.man}/여${data.woman}|"></span>
                                 <span class="status" th:text="${data.status}"></span>
-                            </h2>
+                            </h5>
                         </th:block>
                     </div>
                 </div>

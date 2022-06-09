@@ -35,6 +35,7 @@ public class ScheduleEntity {
     private LocalDate rdt;
 
     @Transient
+    @Column(insertable = false, updatable = false)
     private String day;
 
     public int getId() {
