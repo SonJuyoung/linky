@@ -5,9 +5,9 @@
 <!--*** HEADER ***-->
 <th:block th:fragment="header">
     <nav class="h10vh ps-3 navbar navbar-expand-sm bg-light navbar-dark position-fixed top-0 min-vw-100">
-        <div class="container-fluid d-flex">
+        <div class="container-fluid d-flex position-fixed">
             <a class="navbar-brand" href="#"><img class="h10vh" th:src="@{/img/logo.png}"></a>
-            <a th:href="@{/apply}"><button type="button" class="btn btn-dark">신청하기</button></a>
+            <a th:href="@{/apply}"><button type="button" class="btn btn-dark me-4">신청하기</button></a>
         </div>
     </nav>
 </th:block>
