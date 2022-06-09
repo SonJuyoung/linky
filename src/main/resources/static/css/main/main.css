@@ -1,0 +1,7 @@
+.schedule-mod-select {
+    text-decoration: underline;
+}
+.schedule-mod-select:hover {
+    cursor: pointer;
+    color: white;
+}

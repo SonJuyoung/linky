@@ -30,6 +30,7 @@ html, body { height: 100vh; margin: 0}
 
 
 .mv-auto { margin: auto 0px; }
+.m-auto { margin: auto; }
 .mt10vh{ margin-top: 10vh; }
 .mt20vh{ margin-top: 20vh; }
 .mt30vh{ margin-top: 30vh; }
