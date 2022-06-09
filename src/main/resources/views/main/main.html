@@ -7,22 +7,37 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/main/main.css}">
+    <script defer th:src="@{/js/main/main.js}"></script>
     <title>Title</title>
 </head>
 <body>
     <th:block layout:fragment="content">
-        <div class="mt10vh">
+        <div class="mt10vh main-container">
             <div class="g100 bg-primary d-flex flex-column">
-                <div class="">
+                <div>
                     <h1>Another</h1>
                     <h1>Experience</h1>
                 </div>
                 <div class="text-align-right h-100">
-                    <h1>SCHEDULE</h1>
-                    <h2>2022.7.9 토 17:00 남4/여4 마감</h2>
-                    <h2>2022.7.9 토 17:00 남4/여4 마감</h2>
-                    <h2>2022.7.9 토 17:00 남4/여4 마감</h2>
-                    <h2>2022.7.9 토 17:00 남4/여4 마감</h2>
+                    <div class="d-flex justify-content-end flex-row">
+                        <div>
+                            <button sec:authorize="isAuthenticated()" type="button" class="btn btn-danger me-4 h-0 m-auto schedule-cancel-button hidden">취소하기</button>
+                            <button sec:authorize="isAuthenticated()" type="button" class="btn btn-dark me-4 h-0 m-auto schedule-mod-button">수정하기</button>
+                        </div>
+                        <h1>SCHEDULE</h1>
+                    </div>
+                    <div>
+                        <th:block th:each="data : ${schedule}">
+                            <h2 class="schedule-data">
+                                <span class="date" th:text="${data.rdt}"></span>
+                                <span class="day" th:text="${data.day}"></span>
+                                <span class="time" th:text="${data.time}"></span>
+                                <span class="person" th:text="|남${data.man}/여${data.woman}|"></span>
+                                <span class="status" th:text="${data.status}"></span>
+                            </h2>
+                        </th:block>
+                    </div>
                 </div>
             </div>
 
@@ -98,6 +113,33 @@
                             <h3 class="mt-auto mb-auto ms-1">결제 후 과정이 어떻게 되나요?</h3>
                         </div>
                         <h1>A : </h1>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- The Modal -->
+            <div class="modal schedule-modal" id="myModal">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">스케줄 수정 !</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary schedule-submit-button">Submit</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
