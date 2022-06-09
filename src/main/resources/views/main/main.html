@@ -21,15 +21,16 @@
                 </div>
                 <div class="text-align-right h-100 text-white">
                     <div class="d-flex justify-content-end flex-row">
-                        <div>
-                            <button sec:authorize="isAuthenticated()" type="button" class="btn btn-danger me-4 h-0 m-auto schedule-cancel-button hidden">취소하기</button>
-                            <button sec:authorize="isAuthenticated()" type="button" class="btn btn-dark me-4 h-0 m-auto schedule-mod-button">수정하기</button>
-                        </div>
                         <h1>SCHEDULE</h1>
                     </div>
-                    <div>
+                    <div class="schedule-wrapper">
                         <th:block th:each="data : ${schedule}">
+<!--                            sec:authorize="isAuthenticated()" -->
                             <h2 class="schedule-data">
+                                <button type="button"
+                                        class="btn btn-primary schedule-mod-button"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#myModal">수정</button>
                                 <span class="date" th:text="${data.rdt}"></span>
                                 <span class="day" th:text="${data.day}"></span>
                                 <span class="time" th:text="${data.time}"></span>
@@ -140,7 +141,7 @@
                         </div>
 
                         <!-- Modal body -->
-                        <div class="modal-body">
+                        <div class="modal-body f-modal">
 
                         </div>
 

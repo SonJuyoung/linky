@@ -1,4 +1,8 @@
 html, body { height: 100vh; margin: 0}
+
+.mr10px { margin-right: 10px; }
+.mr30px { margin-right: 30px; }
+
 .mh-10vh { min-height: 10vh; }
 .mh-20vh { min-height: 20vh; }
 .mh-30vh { min-height: 30vh; }
@@ -18,6 +22,10 @@ html, body { height: 100vh; margin: 0}
 .h40vh { height: 40vh; }
 .h50vh { height: 50vh; }
 
+.w33px { width: 33px;}
+.w65px { width: 65px; }
+.w100px { width: 100px; }
+.w150px { width: 150px; }
 .w10vh { width: 10vh; }
 .w20vh { width: 20vh; }
 .w30vh { width: 30vh; }
