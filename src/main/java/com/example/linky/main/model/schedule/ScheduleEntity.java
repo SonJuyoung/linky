@@ -25,10 +25,19 @@ public class ScheduleEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(columnDefinition = "INT UNSIGNED")
     private int id;
+
+    @Column(nullable = false)
     private String time;
+
+    @Column(nullable = false, columnDefinition = "INT UNSIGNED")
     private int man;
+
+    @Column(nullable = false, columnDefinition = "INT UNSIGNED")
     private int woman;
+
+    @Column(nullable = false)
     private boolean status;
 
     @Column(insertable = false)
