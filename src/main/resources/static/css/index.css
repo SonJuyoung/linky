@@ -23,14 +23,20 @@ html, body { height: 100vh; margin: 0}
 .h50vh { height: 50vh; }
 
 .w33px { width: 33px;}
+.w58px { width: 58px; }
 .w65px { width: 65px; }
 .w100px { width: 100px; }
 .w150px { width: 150px; }
+.w332px { width: 332px; }
+.w340px { width: 340px; }
+.w397px { width: 397px; }
+.w400px { width: 400px; }
 .w10vh { width: 10vh; }
 .w20vh { width: 20vh; }
 .w30vh { width: 30vh; }
 .w100 { width: 100%;}
 
+.text-align-start { text-align: start; }
 .text-align-center { text-align: center; }
 .text-align-right { text-align: right; }
 
