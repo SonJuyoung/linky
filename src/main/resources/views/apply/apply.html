@@ -48,9 +48,10 @@
                             <div class="question d-flex justify-content-center mt-5 mb-5">
                                 <select name="aa" id="q1" class="q-select-1 answer me-5">
                                     <option value="0" class="s-false">----------</option>
-                                    <option value="1">2022/07/07</option>
-                                    <option value="2">2022/07/07</option>
-                                    <option value="3">2022/07/07</option>
+                                    <th:block th:each="data : ${data}">
+                                        <option value="1" th:text="${data}"></option>
+                                    </th:block>
+
                                 </select>
                                 <div>
                                     <button class="hidden next">다음</button>
