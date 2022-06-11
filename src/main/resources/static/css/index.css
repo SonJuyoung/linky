@@ -1,4 +1,11 @@
-html, body { height: 100vh; margin: 0}
+@font-face {
+    font-family: 'Happiness-Sans-Title';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Title.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
 
 .mr10px { margin-right: 10px; }
 .mr30px { margin-right: 30px; }
@@ -43,7 +50,6 @@ html, body { height: 100vh; margin: 0}
 .g30 { gap: 30px; }
 .g50 { gap: 50px; }
 .g100 { gap: 100px; }
-
 
 .mv-auto { margin: auto 0px; }
 .m-auto { margin: auto; }
