@@ -50,8 +50,8 @@ html, body { height: 100vh; margin: 0}
     visibility: hidden;
 }
 
-.z-index0 { z-index: 0;}
-.z-index1 { z-index: 1;}
+.z-index0 { z-index: 0!important;}
+.z-index1 { z-index: 1!important;}
 
 .kakao_c {
     object-fit: contain;
@@ -68,4 +68,8 @@ html, body { height: 100vh; margin: 0}
 
 footer {
     background-color: #ECFFF8;
+}
+
+.swiper {
+    z-index: -1;
 }
