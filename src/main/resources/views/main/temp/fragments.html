@@ -9,7 +9,7 @@
         <div class="container-fluid d-flex position-fixed">
             <div class="d-flex">
                 <a class="navbar-brand" href="#"><img class="h10vh" th:src="@{/img/logo.png}"></a>
-                <div class="mv-auto">
+                <div class="mv-auto" sec:authorize="isAuthenticated()">
                     <strong th:text="|방문자 수 : |"></strong>
                     <span th:text="${visitor}"></span>
                 </div>
