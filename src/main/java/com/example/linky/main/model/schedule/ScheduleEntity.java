@@ -40,7 +40,6 @@ public class ScheduleEntity {
     @Column(nullable = false)
     private boolean status;
 
-    @Column(insertable = false)
     private LocalDate rdt;
 
     @Transient
