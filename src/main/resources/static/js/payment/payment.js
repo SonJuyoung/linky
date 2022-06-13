@@ -16,8 +16,6 @@ kakaoBtn.addEventListener("click", () => {
         buyer_email: '구매자 이메일',
         buyer_name: '구매자 이름',
         buyer_tel: '구매자 번호',
-        buyer_addr: '구매자 주소',
-        buyer_postcode: '구매자 주소',
         m_redirect_url: 'redirect url'
     }, function (rsp) {
         if (rsp.success) {
