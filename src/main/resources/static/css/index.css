@@ -101,6 +101,16 @@ footer {
     }
 }
 
+@media screen and (max-width: 484px) {
+    .kakao-btn {
+        width: 100px;
+    }
+
+    .survey-img {
+        width: 70px;
+    }
+}
+
 @media screen and (max-height: 569px) {
     .btns {
         display: flex !important;
@@ -142,8 +152,10 @@ footer {
 
 .apply-header {
     flex : 3;
+    min-height: 30vh;
 }
 
 .apply-body {
     flex: 4;
+    padding: 0 !important;
 }
