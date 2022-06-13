@@ -3,6 +3,7 @@ let paymentElem = document.querySelector(".payment-container");
 let payMsg = document.querySelector(".payMsg");
 let transferBtn = document.querySelector(".transferBtn");
 let transferInfoElem = document.querySelector(".transferInfo");
+let footerElem = document.querySelector("footer");
 
 kakaoBtn.addEventListener("click", () => {
     let IMP = window.IMP;
@@ -39,7 +40,9 @@ kakaoBtn.addEventListener("click", () => {
 transferBtn.addEventListener("click", () => {
     if (!transferInfoElem.classList.contains("d-none")) {
         transferInfoElem.classList.add("d-none");
+        footerElem.classList.remove("mt-5");
     } else {
         transferInfoElem.classList.remove("d-none");
+        footerElem.classList.add("mt-5");
     }
 })

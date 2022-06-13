@@ -16,125 +16,126 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="apply-container">
-        <!--    헤더    -->
-        <div class="apply-header h40vh">
-            <div class="d-flex align-items-center justify-content-center h-100">
-                <h3 class="text-white">더 안전하고 즐거운 시간을 위한 간단한 설문</h3>
+<div class="apply-container mh-90vh d-flex flex-column">
+    <!--    헤더    -->
+    <div class="apply-header d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center h-100">
+            <h3 class="text-white">더 안전하고 즐거운 시간을 위한 간단한 설문</h3>
+        </div>
+    </div>
+
+    <div class="p-3 apply-body">
+        <div class="d-flex g30 justify-content-center">
+            <div>
+                <img class="mb-5 w100px" th:src="@{/img/survey.png}">
+            </div>
+
+            <div>
+                <p>본 설문은 참여자 검증과 매칭에 사용되며,</p>
+                <p>다른 참여자들은 내용을 알지 못하니 걱정하지마세요</p>
             </div>
         </div>
 
-        <div class="p-3">
-            <div class="d-flex g30 justify-content-center">
-                <div>
-                    <img class="mb-5 w100px" th:src="@{/img/survey.png}">
-                </div>
+        <!--    설문    -->
+        <div class="overflow-hidden mt-5">
+            <div id="test-slide" class="swiper-container">
+                <div class="swiper-wrapper text-align-center">
+                    <div class="swiper-slide mh-20vh question-wrap">
+                        <div>
+                            <h4>1. 신청일시</h4>
+                        </div>
+                        <div class="question d-flex justify-content-center mt-5 mb-5">
+                            <select name="aa" id="q1" class="q-select-1 answer me-5">
+                                <option value="0" class="s-false">----------</option>
+                                <th:block th:each="data : ${data}">
+                                    <option value="1" th:text="${data}"></option>
+                                </th:block>
 
-                <div>
-                    <p>본 설문은 참여자 검증과 매칭에 사용되며,</p>
-                    <p>다른 참여자들은 내용을 알지 못하니 걱정하지마세요</p>
-                </div>
-            </div>
-
-            <!--    설문    -->
-            <div class="overflow-hidden mt-5">
-                <div id="test-slide" class="swiper-container">
-                    <div class="swiper-wrapper text-align-center">
-                        <div class="swiper-slide mh-20vh question-wrap">
+                            </select>
                             <div>
-                                <h4>1. 신청일시</h4>
-                            </div>
-                            <div class="question d-flex justify-content-center mt-5 mb-5">
-                                <select name="aa" id="q1" class="q-select-1 answer me-5">
-                                    <option value="0" class="s-false">----------</option>
-                                    <th:block th:each="data : ${data}">
-                                        <option value="1" th:text="${data}"></option>
-                                    </th:block>
-
-                                </select>
-                                <div>
-                                    <button class="hidden next">다음</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide mh-20vh">
-                            <div class="d-flex justify-content-center">
-                                <h4>2. 연령대가 어떻게 되세요? </h4>
-                                <span class="mv-auto"> (예시. 20초/중/후, 30초/중/후)</span>
-                            </div>
-                            <div class="question d-flex justify-content-center mt-5 mb-5">
-                                <input type="text" id="q2" class="q-input answer me-5">
-                                <div>
-                                    <button class="prev-button">이전</button>
-                                    <button class="hidden next">다음</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide mh-20vh">
-                            <div class="d-flex justify-content-center">
-                                <h4>3. 본인의 성격 한마디로</h4>
-                                <span class="mv-auto">(MBTI 가능)</span>
-                            </div>
-                            <div class="question d-flex justify-content-center mt-5 mb-5">
-                                <input type="text" id="q3" class="q-input answer me-5">
-                                <div>
-                                    <button class="prev-button">이전</button>
-                                    <button class="hidden next">다음</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide mh-20vh">
-                            <div class="d-flex justify-content-center">
-                                <h4>4. 연락처(휴대폰 번호)를 적어주세요.</h4>
-                                <span class="mv-auto">(진행 상황 및 공지에 사용됩니다)</span>
-                            </div>
-                            <div class="question d-flex justify-content-center mt-5 mb-5">
-                                <input type="text" id="q4" class="q-input answer me-5">
-                                <div>
-                                    <button class="prev-button">이전</button>
-                                    <button class="hidden next">다음</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide mh-20vh">
-                            <div class="d-flex justify-content-center">
-                                <h4>5. 입금자명을 적어주세요.</h4>
-                                <span class="mv-auto">(입금자명과 신청자가 다를경우 호스트에게 알려주세요^^)</span>
-                            </div>
-                            <div class="question d-flex justify-content-center mt-5 mb-5">
-                                <input type="text" id="q5" class="q-input answer me-5">
-                                <div>
-                                    <button class="prev-button">이전</button>
-                                    <button class="hidden next">다음</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide mh-20vh">
-                            <div class="d-flex justify-content-center">
-                                <h4>5. 본인을 알 수 있는 SNS주소나 아이디 </h4>
-                                <span class="mv-auto">(참여자 검증에 사용되며, 없을 시 우선순위에서 밀릴 수 있어요)</span>
-                            </div>
-                            <div class="question d-flex justify-content-center mt-5 mb-5">
-                                <input type="text" id="q6" class="q-input answer me-5">
-                                <div>
-                                    <button class="prev-button">이전</button>
-                                    <button class="hidden next">제출</button>
-                                </div>
+                                <button class="hidden next">다음</button>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+
+                    <div class="swiper-slide mh-20vh">
+                        <div class="d-flex justify-content-center">
+                            <h4>2. 연령대가 어떻게 되세요? </h4>
+                            <span class="mv-auto"> (예시. 20초/중/후, 30초/중/후)</span>
+                        </div>
+                        <div class="question d-flex justify-content-center mt-5 mb-5">
+                            <input type="text" id="q2" class="q-input answer me-5">
+                            <div>
+                                <button class="prev-button">이전</button>
+                                <button class="hidden next">다음</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mh-20vh">
+                        <div class="d-flex justify-content-center">
+                            <h4>3. 본인의 성격 한마디로</h4>
+                            <span class="mv-auto">(MBTI도 괜찮아요)</span>
+                        </div>
+                        <div class="question d-flex justify-content-center mt-5 mb-5">
+                            <input type="text" id="q3" class="q-input answer me-5">
+                            <div>
+                                <button class="prev-button">이전</button>
+                                <button class="hidden next">다음</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mh-20vh">
+                        <div class="d-flex justify-content-center">
+                            <h4>4. 연락처(휴대폰 번호)를 적어주세요.</h4>
+                            <span class="mv-auto">(진행 상황 및 공지에 사용됩니다)</span>
+                        </div>
+                        <div class="question d-flex justify-content-center mt-5 mb-5">
+                            <input type="text" id="q4" class="q-input answer me-5">
+                            <div>
+                                <button class="prev-button">이전</button>
+                                <button class="hidden next">다음</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mh-20vh">
+                        <div class="d-flex justify-content-center">
+                            <h4>5. 입금자명을 적어주세요.</h4>
+                            <span class="mv-auto">(입금자명과 신청자가 다를경우 호스트에게 알려주세요^^)</span>
+                        </div>
+                        <div class="question d-flex justify-content-center mt-5 mb-5">
+                            <input type="text" id="q5" class="q-input answer me-5">
+                            <div>
+                                <button class="prev-button">이전</button>
+                                <button class="hidden next">다음</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide mh-20vh">
+                        <div class="d-flex justify-content-center">
+                            <h4>6. 본인을 알 수 있는 SNS주소나 아이디 </h4>
+                            <span class="mv-auto">(참여자 검증에 사용되며, 없을 시 우선순위에서 밀릴 수 있어요)</span>
+                        </div>
+                        <div class="question d-flex justify-content-center mt-5 mb-5">
+                            <input type="text" id="q6" class="q-input answer me-5">
+                            <div>
+                                <button class="prev-button">이전</button>
+                                <button class="hidden next">제출</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </div>
-    <div>
+</div>
+<div>
 
-    </div>
+</div>
+<th:block th:replace="/main/temp/fragments :: footer"></th:block>
 </body>
 </html>
