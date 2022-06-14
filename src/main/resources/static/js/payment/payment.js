@@ -28,6 +28,7 @@ kakaoBtn.addEventListener("click", () => {
             <div class="d-flex flex-column justify-content-center align-items-center h-100">
             <h1>결제가 완료되었습니다.</h1>
             <h2>호스트가 곧 카카오톡 메세지로 안내드리겠습니다.</h2>
+            <a href="/"><button type="button" class="btn btn-primary">홈으로</button></a>
             </div>
             `
         } else {
@@ -45,4 +46,22 @@ transferBtn.addEventListener("click", () => {
         transferInfoElem.classList.remove("d-none");
         footerElem.classList.add("mt-5");
     }
+})
+
+//계좌번호 복사
+let copyBtn = document.querySelector(".copy-btn");
+
+function copy_to_clipboard() {
+    const copyText = document.querySelector('.account-number').textContent;
+    const textarea = document.createElement('textarea');
+    textarea.style.display = "none";
+    textarea.textContent = copyText;
+    document.body.append(textarea);
+    textarea.select();
+    document.execCommand("Copy");
+    alert('복사되었습니다, 감사합니다.');
+}
+
+copyBtn.addEventListener("click", ()=> {
+    copy_to_clipboard();
 })
