@@ -5,10 +5,22 @@
     font-style: normal;
 }
 
+
+
 html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
+
+.m10 { margin: 10px; }
+.m20 { margin: 20px; }
+.m30 { margin: 30px; }
+.m40 { margin: 40px; }
+
+.mb20 { margin-bottom: 20px;}
+
+.mt20 { margin-top: 20px; }
 
 .mr10px { margin-right: 10px; }
 .mr30px { margin-right: 30px; }
+.mr5vh { padding-right: 5vh; }
 
 .mh-10vh { min-height: 10vh; }
 .mh-20vh { min-height: 20vh; }
