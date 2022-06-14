@@ -38,3 +38,37 @@
     max-width: 50vh;
 }
 
+.img-div {
+    border: 1px solid;
+    border-radius: 100%;
+    overflow: hidden;
+    margin: 0px 10px;
+    max-height: 80px;
+}
+
+.img-div > img {
+    width: 70px;
+}
+
+.review-modal {
+    display: none;
+    position: fixed;
+    height: 50vh;
+    z-index: 1055 !important;
+    top: 0;
+    left: 0;
+    margin: 1.75rem auto;
+    width: 100%;
+    justify-content: center;
+}
+
+.review-img div {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.review-img img {
+    width: 100%;
+    height: 100%;
+}

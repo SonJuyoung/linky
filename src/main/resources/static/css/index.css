@@ -5,7 +5,9 @@
     font-style: normal;
 }
 
-
+.cursor-pointer:hover {
+    cursor: pointer;
+}
 
 html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
 
@@ -17,6 +19,8 @@ html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
 .mb20 { margin-bottom: 20px;}
 
 .mt20 { margin-top: 20px; }
+
+.ml10px { margin-left: 10px; }
 
 .mr10px { margin-right: 10px; }
 .mr30px { margin-right: 30px; }
@@ -39,6 +43,7 @@ html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
 .h10vh { height: 10vh; }
 .h20vh { height: 20vh; }
 .h30vh { height: 30vh; }
+.h38vh{ height: 38vh; }
 .h40vh { height: 40vh; }
 .h50vh { height: 50vh; }
 .h60vh { height: 60vh; }
@@ -55,6 +60,7 @@ html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
 .w10vh { width: 10vh; }
 .w20vh { width: 20vh; }
 .w30vh { width: 30vh; }
+.w60vh { width: 60vh; }
 .w80 { width: 80%; }
 .w100 { width: 100%;}
 
@@ -72,6 +78,8 @@ html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
 .mt20vh{ margin-top: 20vh; }
 .mt30vh{ margin-top: 30vh; }
 .mt35vh{ margin-top: 35vh; }
+
+.p20px { padding: 20px; }
 
 .hidden {
     visibility: hidden;
