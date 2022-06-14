@@ -61,6 +61,7 @@ html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
 .w20vh { width: 20vh; }
 .w30vh { width: 30vh; }
 .w60vh { width: 60vh; }
+.w80 { width: 80%; }
 .w100 { width: 100%;}
 
 .text-align-start { text-align: start; }
@@ -178,4 +179,9 @@ footer {
 .apply-body {
     flex: 4;
     padding: 0 !important;
+}
+
+.copy-btn {
+    box-shadow: 3px 3px 2px 1px rgba(0,0,0,0.59);
+    font-size: 0.7rem !important;
 }
