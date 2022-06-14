@@ -16,6 +16,25 @@
     background-color: #6884b3;
 }
 
-.receiver {
-
+.talk-room {
+    background-color: #ccdcf6;
 }
+
+.talk-me {
+    border-radius: 1rem;
+    padding: 10px;
+    background: white;
+    max-width: 50vh;
+}
+
+.talk-you {
+    justify-content: end;
+}
+
+.talk-yellow {
+    border-radius: 1rem;
+    padding: 10px;
+    background: #FDF01B;
+    max-width: 50vh;
+}
+
