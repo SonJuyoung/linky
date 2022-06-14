@@ -39,8 +39,6 @@
 }
 
 .img-div {
-    border: 1px solid;
-    border-radius: 100%;
     overflow: hidden;
     margin: 0px 10px;
     max-height: 80px;
