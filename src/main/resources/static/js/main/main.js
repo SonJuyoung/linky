@@ -106,8 +106,59 @@ if(scheduleContainerElem) {
     });
 }
 
+/* Open the review modal */
+const reviewButton = document.querySelector('#review-button');
+const reviewModal = document.querySelector('.review-modal');
+if(reviewButton) {
+    reviewButton.addEventListener('click', () => {
+        reviewModal.style.display = 'flex';
+        const div = document.createElement('div');
+        div.classList.add('modal-backdrop');
+        div.classList.add('show');
+        document.body.appendChild(div);
+    });
+}
+
+/* Close the review modal */
+const reviewCloseButton = document.querySelector('.review-close');
+if(reviewCloseButton) {
+    reviewCloseButton.addEventListener('click', () => {
+        reviewModal.style.display = 'none';
+        const div = document.querySelector('.modal-backdrop');
+        div.classList.remove('modal-backdrop');
+        div.classList.remove('show');
+    });
+}
+
+/* Open the review history */
+const reviewHistory = document.querySelector('.review-history');
+if(reviewHistory) {
+    reviewHistory.addEventListener('click', () => {
+        window.open('/review', 'review', 'width=100px, height=100px')
+    });
+}
+
 // Process Swiper
 var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
+    loop: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
+
+
+var swiper = new Swiper(".review-swiper", {
     spaceBetween: 30,
     centeredSlides: true,
     autoplay: {
