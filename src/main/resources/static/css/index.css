@@ -55,7 +55,7 @@ html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
 .w10vh { width: 10vh; }
 .w20vh { width: 20vh; }
 .w30vh { width: 30vh; }
-.w60 { width: 60%; }
+.w80 { width: 80%; }
 .w100 { width: 100%;}
 
 .text-align-start { text-align: start; }
