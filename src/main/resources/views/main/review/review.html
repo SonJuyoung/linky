@@ -3,9 +3,29 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <script defer th:src="@{/js/main/review/review.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/main/review/review.css}">
     <title>Title</title>
 </head>
 <body>
+    <div class="review-wrapper">
+        <form th:action="@{/review}" method="post" enctype="multipart/form-data">
+            <div class="input-wrapper">
+                <input type="file" name="img" id="img-file" multiple>
+            </div>
 
+            <div>
+                <input type="submit" value="save">
+            </div>
+        </form>
+
+        <div class="input-wrapper">
+            <div class="img-first-sec">
+            </div>
+
+            <div class="img-second-sec">
+            </div>
+        </div>
+    </div>
 </body>
 </html>
