@@ -1,10 +1,12 @@
 package com.example.linky.main.model.review;
 
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface ReviewRepository {
-    List<ReviewEntity> findAllByRdt();
+public interface ReviewRepository extends JpaRepository<ReviewEntity, Integer> {
+
 }
