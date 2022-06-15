@@ -130,7 +130,7 @@ if(reviewCloseButton) {
     });
 }
 
-/* Open the review history */
+/* Open the review insert */
 const reviewHistory = document.querySelector('.review-history');
 if(reviewHistory) {
     reviewHistory.addEventListener('click', () => {
