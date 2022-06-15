@@ -134,7 +134,7 @@ if(reviewCloseButton) {
 const reviewHistory = document.querySelector('.review-history');
 if(reviewHistory) {
     reviewHistory.addEventListener('click', () => {
-        window.open('/review', 'review', 'width=100px, height=100px')
+        window.open('/review', 'review', 'width=500px, height=700px')
     });
 }
 
