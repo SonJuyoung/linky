@@ -19,6 +19,20 @@ public class MyFileUtils {
         return folder.getAbsolutePath();
     }
 
+    public void delFile(String name) {
+        File file = new File(uploadImagePath+ "/review/" +name);
+        System.out.println(file);
+        if(file.exists()) {
+            if(file.delete()) {
+                System.out.println("파일삭제 성공 !");
+            } else {
+                System.out.println("파일삭제 실패 !");
+            }
+        } else {
+            System.out.println("파일이 존재하지 않습니다.");;
+        }
+    }
+
     //랜덤 파일명 만들기
     public String getRandomFileNm() {
         return UUID.randomUUID().toString();
@@ -41,6 +55,18 @@ public class MyFileUtils {
 
     public String transferTo(MultipartFile mf, String target) {
         String fileNm = getRandomFileNm(mf); // "aslkdfjaslkf2130asdwds.jpg"
+        String basePath = makeFolders(target); // (폴더가 없을 수 있기 때문에)폴더를 만들어준다.
+        File saveFile = new File(basePath, fileNm);
+        try {
+            mf.transferTo(saveFile);
+            return fileNm;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String transferTo(MultipartFile mf, String target, String fileNm) {
         String basePath = makeFolders(target); // (폴더가 없을 수 있기 때문에)폴더를 만들어준다.
         File saveFile = new File(basePath, fileNm);
         try {

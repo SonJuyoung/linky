@@ -18,4 +18,7 @@ public interface ReviewRepository extends JpaRepository<ReviewEntity, Integer> {
     @Modifying
     @Transactional
     void deleteOldReview();
+
+    @Query(value = "SELECT * from t_review WHERE id in (SELECT temp.id FROM (SELECT * FROM t_review order by rdt LIMIT 1) AS temp)", nativeQuery = true)
+    ReviewEntity delTargetReview();
 }

@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class ReviewService {
 
@@ -16,12 +19,24 @@ public class ReviewService {
         reviewRepository.deleteOldReview();
     }
     public void insFileInFolder(ReviewVo reviewVo) {
+        List<String> result = new ArrayList<>();
+
         for(MultipartFile item : reviewVo.getImg()) {
-            myFileUtils.transferTo(item, "review");
             String img = myFileUtils.getRandomFileNm(item);
+            myFileUtils.transferTo(item, "review", img);
             ReviewEntity review = new ReviewEntity();
             review.setImg(img);
-            reviewRepository.save(review);
+            ReviewEntity status = reviewRepository.save(review);
+
+            List<ReviewEntity> list = reviewRepository.findAllByOrderByRdtDesc();
+
+            if(list.size() > 6) {
+                if (status != null) {
+                    myFileUtils.delFile(reviewRepository.delTargetReview().getImg());
+                    delExcessItems();
+                }
+            }
+
         }
     }
 }
