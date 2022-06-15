@@ -1,5 +1,6 @@
 package com.example.linky.main;
 
+import com.example.linky.main.model.review.ReviewRepository;
 import com.example.linky.main.model.schedule.ScheduleEntity;
 import com.example.linky.main.model.schedule.ScheduleRepository;
 import com.example.linky.visitor.VisitorService;
@@ -17,6 +18,7 @@ public class MainController {
     @Autowired private VisitorRepository visitorRepository;
     @Autowired private MainService mainService;
     @Autowired private VisitorService visitorService;
+    @Autowired private ReviewRepository reviewRepository;
 
 
     @GetMapping("")
@@ -25,6 +27,8 @@ public class MainController {
 
         model.addAttribute("visitor", visitorService.getVisitorCount());
         model.addAttribute("schedule", mainService.scheduleInit());
+        model.addAttribute("reviews", reviewRepository.findAllByOrderByRdtDesc());
+        System.out.println(reviewRepository.findAllByOrderByRdtDesc());
         return "main/main";
     }
 

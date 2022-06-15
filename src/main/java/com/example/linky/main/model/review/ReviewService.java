@@ -9,6 +9,6 @@ public class ReviewService {
     @Autowired private ReviewRepository reviewRepository;
 
     public void delExcessItems() {
-
+        reviewRepository.deleteOldReview();
     }
 }

@@ -221,24 +221,11 @@
                 <div class="swiper-container swiper review-swiper">
                     <!-- 보여지는 영역 -->
                     <div class="swiper-wrapper text-align-center">
+                        <th:block th:each="data:${reviews}">
                         <div class="swiper-slide">
-                            <img th:src="@{/img/review1.png}">
+                            <img th:src="@{/img/{img} (img=${data.img})}">
                         </div>
-                        <div class="swiper-slide">
-                            <img th:src="@{/img/review2.png}">
-                        </div>
-                        <div class="swiper-slide">
-                            <img th:src="@{/img/review3.png}">
-                        </div>
-                        <div class="swiper-slide">
-                            <img th:src="@{/img/review4.png}">
-                        </div>
-                        <div class="swiper-slide">
-                            <img th:src="@{/img/review5.png}">
-                        </div>
-                        <div class="swiper-slide">
-                            <img th:src="@{/img/review.png}">
-                        </div>
+                        </th:block>
                     </div>
                     <div class="swiper-pagination"></div>
                     <div class="swiper-button-prev"></div>
