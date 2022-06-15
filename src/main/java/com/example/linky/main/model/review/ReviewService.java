@@ -7,11 +7,14 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class ReviewService {
 
-    @Autowired private ReviewRepository reviewRepository;
-    @Autowired private MyFileUtils myFileUtils;
+    @Autowired
+    private ReviewRepository reviewRepository;
+    @Autowired
+    private MyFileUtils myFileUtils;
 
     public void delExcessItems() {
         reviewRepository.deleteOldReview();
+    }
     public void insFileInFolder(ReviewVo reviewVo) {
         for(MultipartFile item : reviewVo.getImg()) {
             myFileUtils.transferTo(item, "review");
