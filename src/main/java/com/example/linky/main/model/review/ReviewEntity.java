@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -17,9 +18,6 @@ public class ReviewEntity {
     @Column(nullable = false)
     private String img;
 
-    @Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
-    private boolean repre;
-
-    @Column(insertable = false, updatable = false, columnDefinition = "DATE DEFAULT CURRENT_TIMESTAMP()")
-    private LocalDate rdt;
+    @Column(insertable = false, updatable = false, columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP()")
+    private LocalDateTime rdt;
 }
