@@ -22,15 +22,7 @@ public class MyFileUtils {
     public void delFile(String name) {
         File file = new File(uploadImagePath+ "/review/" +name);
         System.out.println(file);
-        if(file.exists()) {
-            if(file.delete()) {
-                System.out.println("파일삭제 성공 !");
-            } else {
-                System.out.println("파일삭제 실패 !");
-            }
-        } else {
-            System.out.println("파일이 존재하지 않습니다.");;
-        }
+        if(file.exists()) { if(file.delete()) {} else {} } else {}
     }
 
     //랜덤 파일명 만들기
