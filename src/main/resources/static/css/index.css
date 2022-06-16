@@ -94,7 +94,7 @@ html, body { height: 100vh; margin: 0; font-family: Happiness-Sans-Title}
 
 .kakao_c {
     object-fit: contain;
-    max-height: 5vh;
+    max-height: 4vh;
 }
 
 .kakao_c:hover {

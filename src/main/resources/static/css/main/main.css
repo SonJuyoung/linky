@@ -76,8 +76,8 @@
 }
 
 .swiper-slide > img {
-    width : 80%;
-    height : 80%;
+    width : 70%;
+    height : 70%;
     object-fit: contain;
 }
 
@@ -94,5 +94,9 @@
         padding: 5px;
         background: #FDF01B;
         max-width: 25vh;
+    }
+
+    .img-div > img {
+        width: 50px;
     }
 }
