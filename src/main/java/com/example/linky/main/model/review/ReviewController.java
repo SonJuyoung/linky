@@ -23,11 +23,16 @@ public class ReviewController {
         return "main/review/review";
     }
 
-    @ResponseBody
     @PostMapping
     public String saveReview(ReviewVo review) {
         reviewService.insFileInFolder(review);
 
-        return null;
+        return "redirect:/review/proc";
+    }
+
+    @GetMapping("/proc")
+    public String saveProc() {
+
+        return "main/review/proc";
     }
 }
