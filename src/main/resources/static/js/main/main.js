@@ -106,9 +106,22 @@ if(scheduleContainerElem) {
     });
 }
 
-/* Open the review modal */
 const reviewButton = document.querySelector('#review-button');
 const reviewModal = document.querySelector('.review-modal');
+
+const url = new URL(location.href);
+const searchParams = url.searchParams;
+const review = searchParams.get('review');
+if(review === 'success') {
+    reviewModal.style.display = 'flex';
+    const div = document.createElement('div');
+    div.classList.add('modal-backdrop');
+    div.classList.add('show');
+    document.body.appendChild(div);
+    document.querySelector('.review-swiper').scrollIntoView(true);
+}
+
+/* Open the review modal */
 if(reviewButton) {
     reviewButton.addEventListener('click', () => {
         reviewModal.style.display = 'flex';
