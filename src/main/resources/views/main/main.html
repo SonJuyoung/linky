@@ -217,7 +217,7 @@
         </div>
 
             <div>
-                <button id="review-button">수정</button>
+                <button sec:authorize="isAuthenticated()" id="review-button">수정</button>
                 <div class="swiper-container swiper review-swiper">
                     <!-- 보여지는 영역 -->
                     <div class="swiper-wrapper text-align-center">
