@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("")
 public class paymentController {
@@ -16,6 +18,9 @@ public class paymentController {
 
     @GetMapping("/payment")
     public String payment(Model model) {
+        if(paymentService.getAnswerListVoFromSession() == null) {
+            return "redirect:/apply";
+        }
         model.addAttribute("result", paymentService.getAnswerListVoFromSession());
         String id = paymentService.getAnswerListVoFromSession().getAnswerVoList().get(0).getAnswer().split(" ")[2];
         System.out.println(id);
