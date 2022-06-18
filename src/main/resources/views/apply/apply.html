@@ -13,7 +13,8 @@
     <link rel="stylesheet" th:href="@{/css/apply/apply.css}">
     <script defer th:src="@{/js/apply/slide.js}"></script>
     <script defer th:src="@{/js/apply/apply.js}"></script>
-    <title>Title</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <title>Apply</title>
 </head>
 <body>
 <div class="apply-container mh-90vh d-flex flex-column">
@@ -37,7 +38,8 @@
         </div>
 
         <!--    설문    -->
-        <div class="overflow-hidden mt-5">
+        <form id="contact-form" class="overflow-hidden mt-5">
+            <input type="hidden" name="contact_number">
             <div id="test-slide" class="swiper-container">
                 <div class="swiper-wrapper text-align-center">
                     <div class="swiper-slide mh-20vh question-wrap">
@@ -45,7 +47,7 @@
                             <h4>1. 신청일시</h4>
                         </div>
                         <div class="question d-flex justify-content-center mt-5 mb-5">
-                            <select name="aa" id="q1" class="q-select-1 answer me-5">
+                            <select id="q1" class="q-select-1 answer me-5" name-="when">
                                 <option value="0" class="s-false">----------</option>
                                 <th:block th:each="data : ${data}">
                                     <option value="1" th:text="${data}"></option>
@@ -64,7 +66,7 @@
                             <span class="mv-auto"> (예시. 20초/중/후, 30초/중/후)</span>
                         </div>
                         <div class="question d-flex justify-content-center mt-5 mb-5">
-                            <input type="text" id="q2" class="q-input answer me-5">
+                            <input type="text" id="q2" class="q-input answer me-5" name="age">
                             <div>
                                 <button class="prev-button">이전</button>
                                 <button class="hidden next">다음</button>
@@ -79,7 +81,7 @@
                             <span class="mv-auto">(MBTI도 괜찮아요)</span>
                         </div>
                         <div class="question d-flex justify-content-center mt-5 mb-5">
-                            <input type="text" id="q3" class="q-input answer me-5">
+                            <input type="text" id="q3" class="q-input answer me-5" name="character">
                             <div>
                                 <button class="prev-button">이전</button>
                                 <button class="hidden next">다음</button>
@@ -93,7 +95,7 @@
                             <span class="mv-auto">(진행 상황 및 공지에 사용됩니다)</span>
                         </div>
                         <div class="question d-flex justify-content-center mt-5 mb-5">
-                            <input type="text" id="q4" class="q-input answer me-5">
+                            <input type="text" id="q4" class="q-input answer me-5" name="phone">
                             <div>
                                 <button class="prev-button">이전</button>
                                 <button class="hidden next">다음</button>
@@ -107,7 +109,7 @@
                             <span class="mv-auto">(입금자명과 신청자가 다를경우 호스트에게 알려주세요^^)</span>
                         </div>
                         <div class="question d-flex justify-content-center mt-5 mb-5">
-                            <input type="text" id="q5" class="q-input answer me-5">
+                            <input type="text" id="q5" class="q-input answer me-5" name="from_name">
                             <div>
                                 <button class="prev-button">이전</button>
                                 <button class="hidden next">다음</button>
@@ -121,20 +123,42 @@
                             <span class="mv-auto">(참여자 검증에 사용되며, 없을 시 우선순위에서 밀릴 수 있어요)</span>
                         </div>
                         <div class="question d-flex justify-content-center mt-5 mb-5">
-                            <input type="text" id="q6" class="q-input answer me-5">
+                            <input type="text" id="q6" class="q-input answer me-5" name="sns">
                             <div>
                                 <button class="prev-button">이전</button>
-                                <button class="hidden next">제출</button>
+                                <button id="submit" type="submit" class="hidden next">제출</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <div>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('2SCkmYoyvP-gfNfUZ');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm('service_4ukjdnd', 'template_5p0hfsm', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
 
 </div>
 <th:block th:replace="/main/temp/fragments :: footer"></th:block>

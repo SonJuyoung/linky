@@ -28,7 +28,8 @@ public class ApplyController {
         for(ScheduleEntity entity : scheduleRepository.findAvailable()) {
             String rdt = String.valueOf(entity.getRdt());
             String day = entity.getDay();
-            rdtDay = rdt + " " + day;
+            String id = String.valueOf(entity.getId());
+            rdtDay = rdt + " " + day + " " + id;
             list.add(rdtDay);
         }
 

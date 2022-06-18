@@ -61,6 +61,17 @@ if(scheduleContainerElem) {
                 `;
             }
             scheduleModalBody.appendChild(div);
+
+            const div1 = document.createElement('div');
+            div1.classList.add('d-flex');
+            div1.innerHTML = `
+                    <div class="text-align-right mr10px w65px">장소 설정</div>
+                    <label class="mr30px">
+                        <input class="w150px modal-place" type="text">
+                    </label>
+                `;
+
+            scheduleModalBody.appendChild(div1);
         });
     });
 
@@ -74,6 +85,7 @@ if(scheduleContainerElem) {
         const modalMan = mainContainerElem.querySelector('.modal-man').value;
         const modalWoman = mainContainerElem.querySelector('.modal-woman').value;
         let modalStatus = mainContainerElem.querySelectorAll('.modal-status');
+        const modalPlace = mainContainerElem.querySelector('.modal-place').value;
         modalStatus.forEach(item => {
             if(item.checked) {
                 modalStatus = parseInt(item.value);
@@ -86,7 +98,8 @@ if(scheduleContainerElem) {
             time : modalTime,
             man : modalMan,
             woman : modalWoman,
-            status : modalStatus
+            status : modalStatus,
+            place : modalPlace
         }
 
         fetch('/schedule/mod', {
