@@ -31,6 +31,9 @@ public class ScheduleEntity {
     @Column(nullable = false)
     private String time;
 
+    @Column(nullable = false)
+    private String place;
+
     @Column(nullable = false, columnDefinition = "INT UNSIGNED")
     private int man;
 
