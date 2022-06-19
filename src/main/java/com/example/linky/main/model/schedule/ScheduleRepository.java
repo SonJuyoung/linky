@@ -12,4 +12,7 @@ public interface ScheduleRepository extends JpaRepository<ScheduleEntity, Intege
 
     @Query(value = "select s from ScheduleEntity s where s.status = true order by s.rdt")
     List<ScheduleEntity> findAvailable();
+
+    @Query(value = "select s.place from ScheduleEntity s where s.id = :id")
+    String findPlace(int id);
 }

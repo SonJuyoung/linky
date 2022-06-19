@@ -30,7 +30,7 @@
 
             <div class="m-3 fw-bold">아래 정보를 다시 한 번 확인해 주세요</div>
             <div class="m-2" th:text="|예약일시 : ${result.answerVoList[0].answer}|"></div>
-            <div class="m-2">장소 : 대구시 중구 ....</div>
+            <div class="m-2" th:text="|장소 : ${place}|"></div>
             <div class="m-2" th:text="|입금자명 : ${result.answerVoList[4].answer}|"></div>
             <div class="m-2" th:text="|연락처 : ${result.answerVoList[3].answer}|"></div>
             <div class="m-2">금액 : 10,000원</div>
