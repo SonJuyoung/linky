@@ -221,6 +221,7 @@
             </div>
 
             <div>
+                <button sec:authorize="isAuthenticated()" id="review-button">수정</button>
                 <div class="mv-auto" sec:authorize="isAuthenticated()">
                     <button id="review-button">수정</button>
                 </div>
@@ -300,6 +301,9 @@
             </div>
         </div>
     </div>
+
+    <script>
+    </script>
 </th:block>
 </body>
 </html>
