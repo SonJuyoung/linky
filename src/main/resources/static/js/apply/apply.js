@@ -1,3 +1,5 @@
+
+
 const applyContainerElem = document.querySelector('.apply-container');
 if(applyContainerElem) {
     const selectedIndex = {
@@ -59,6 +61,11 @@ if(applyContainerElem) {
                 slide.slideNext(1, 10, 1);
             } else {
                 /** submit 기능 **/
+
+                /* 카카오메시지 */
+
+
+                /* 주소 이동 */
                 const answerArr = applyContainerElem.querySelectorAll('.answer');
                 answerArr.forEach(item => {
                     const nodeName = item.nodeName;

@@ -14,6 +14,9 @@ public class paymentController {
 
     @GetMapping("/payment")
     public String payment(Model model) {
+
+
+
         model.addAttribute("result", paymentService.getAnswerListVoFromSession());
 
         return "payment/payment";
